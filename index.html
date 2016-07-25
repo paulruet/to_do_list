@@ -1,0 +1,47 @@
+<html>
+<head>
+  <title>Simple To-DO List</title>
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="todo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.css">
+</head>
+
+<body class="well">
+<div id="container">
+    <div id="header"> To Do List </div>
+    <div class="task-list" id="sort">
+      <h3>To Do-List</h3>
+      
+    </div>
+    <div class="task-list" >
+      <h3>Add a task</h3>
+
+      <form id="todo-form">
+        <input type="text" placeholder="Title" />
+        <textarea placeholder="Description"></textarea>
+        <input type="text" id="datepicker" placeholder="Due Date (dd/mm/yyyy)" />
+        <input type="button" class="btn btn-primary" value="Add Task" onclick="todo.add();" />
+      </form>
+
+      <input type="button" class="btn btn-primary" value="Clear Data" onclick="todo.clear();" />
+    </div>
+
+    <div style="clear:both;"></div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="check.js"></script>
+
+    <script type="text/javascript">
+      $( "#datepicker" ).datepicker();
+      $( "#datepicker" ).datepicker("option", "dateFormat", "dd/mm/yy");
+      $( "#sort" ).sortable();
+      $( "#sort" ).disableSelection();
+      
+      todo.init();
+    </script>
+
+  </div>
+</body>
+</html>
